@@ -9,7 +9,6 @@ import com.example.helloworld.databinding.ActivityChildBinding
 class ChildActivity : AppCompatActivity() {
     private lateinit var binding: ActivityChildBinding
 
-    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
