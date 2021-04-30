@@ -2,7 +2,11 @@ package com.example.helloworld
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.OneShotPreDrawListener.add
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
 import com.example.helloworld.databinding.ActivityMainBinding
 
 private lateinit var binding: ActivityMainBinding
@@ -15,21 +19,27 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        if (savedInstanceState == null) {
+            supportFragmentManager.commit {
+                setReorderingAllowed(true)
+                add<FormularyFragment>(R.id.fragment_container_view)
+            }
+        }
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
-        binding.button.setOnClickListener {
+        button.setOnClickListener {
             val i = Intent(this, ChildActivity::class.java)
 
-            i.putExtra(NOM_KEY, binding.nom.text.toString());
-            i.putExtra(PRENOM_KEY, binding.prenom.text.toString());
-            
-            if (binding.nom.text!!.isEmpty()) {
-                binding.nom.error = getString(R.string.error_nom)
-            } else if (binding.prenom.text!!.isEmpty()) {
-                binding.prenom.error = getString(R.string.error_prenom)
+            i.putExtra(NOM_KEY, nom.text.toString());
+            i.putExtra(PRENOM_KEY, prenom.text.toString());
+
+            if (nom.text!!.isEmpty()) {
+                nom.error = getString(R.string.error_nom)
+            } else if (prenom.text!!.isEmpty()) {
+                prenom.error = getString(R.string.error_prenom)
             } else {
                 startActivity(i)
             }
