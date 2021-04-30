@@ -1,6 +1,5 @@
 package com.example.helloworld
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.helloworld.MainActivity.Companion.NOM_KEY

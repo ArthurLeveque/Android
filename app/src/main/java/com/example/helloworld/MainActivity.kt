@@ -30,10 +30,9 @@ class MainActivity : AppCompatActivity() {
             if (binding.nom.text.isEmpty() || binding.prenom.text.isEmpty()) {
                 Toast.makeText(this, "Vous devez renseigner tous les champs !", Toast.LENGTH_SHORT).show();
             } else {
-                startActivity(i);
+                startActivity(i)
             }
         }
     }
-
 
 }
