@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Hello world</string>
+    <string name="nom">Nom</string>
+    <string name="pr_nom">Prénom</string>
+    <string name="error_nom">Erreur nom</string>
+    <string name="error_prenom">Erreur prénom</string>
+    <string name="errorMessage" />
 </resources>

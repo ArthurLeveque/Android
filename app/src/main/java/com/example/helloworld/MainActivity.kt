@@ -2,7 +2,6 @@ package com.example.helloworld
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.helloworld.databinding.ActivityMainBinding
 
@@ -26,9 +25,11 @@ class MainActivity : AppCompatActivity() {
 
             i.putExtra(NOM_KEY, binding.nom.text.toString());
             i.putExtra(PRENOM_KEY, binding.prenom.text.toString());
-
-            if (binding.nom.text.isEmpty() || binding.prenom.text.isEmpty()) {
-                Toast.makeText(this, "Vous devez renseigner tous les champs !", Toast.LENGTH_SHORT).show();
+            
+            if (binding.nom.text!!.isEmpty()) {
+                binding.nom.error = getString(R.string.error_nom)
+            } else if (binding.prenom.text!!.isEmpty()) {
+                binding.prenom.error = getString(R.string.error_prenom)
             } else {
                 startActivity(i)
             }
