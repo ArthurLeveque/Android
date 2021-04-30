@@ -9,6 +9,10 @@ import android.widget.EditText
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
+    companion object {
+        const val NOM_KEY : String = "nom_key"
+        const val PRENOM_KEY : String = "prenom_key"
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -17,12 +21,12 @@ class MainActivity : AppCompatActivity() {
 
         myButton.setOnClickListener {
             val i = Intent(this, ChildActivity::class.java)
-            var nom: EditText = findViewById(R.id.nom);
+            val nom: EditText = findViewById(R.id.nom);
             val prenom: EditText = findViewById(R.id.prenom);
 
 
-            i.putExtra ( "nom", nom.text.toString() );
-            i.putExtra ( "prenom", prenom.text.toString() );
+            i.putExtra ( NOM_KEY, nom.text.toString() );
+            i.putExtra ( PRENOM_KEY, prenom.text.toString() );
 
             if (nom.text.isEmpty() || prenom.text.isEmpty()) {
                 Toast.makeText(this, "Vous devez renseigner tous les champs !", Toast.LENGTH_SHORT).show();
