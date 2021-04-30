@@ -9,13 +9,10 @@ import android.widget.EditText
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
-
-        companion object{
-            const val NOM_KEY: String = "nom_key";
-            const val PRENOM_KEY: String = "prenom_key";
-        }
-
-
+    companion object {
+        const val NOM_KEY : String = "nom_key"
+        const val PRENOM_KEY : String = "prenom_key"
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
