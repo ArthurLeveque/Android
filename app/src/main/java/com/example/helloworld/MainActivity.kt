@@ -24,17 +24,16 @@ class MainActivity : AppCompatActivity() {
             val nom: EditText = findViewById(R.id.nom);
             val prenom: EditText = findViewById(R.id.prenom);
 
+            i.putExtra(NOM_KEY, nom.text.toString());
+            i.putExtra(PRENOM_KEY, prenom.text.toString());
 
-            i.putExtra ( NOM_KEY, nom.text.toString() );
-            i.putExtra ( PRENOM_KEY, prenom.text.toString() );
-
-            if (nom.text.isEmpty() || prenom.text.isEmpty()) {
-                Toast.makeText(this, "Vous devez renseigner tous les champs !", Toast.LENGTH_SHORT).show();
+            if (nom.text.toString().isEmpty() || prenom.text.toString().isEmpty()) {
+                Toast.makeText(this, "Vous devez renseigner tous les champs !", Toast.LENGTH_SHORT)
+                    .show();
             } else {
-                startActivity(i);
+                startActivity(i)
             }
         }
     }
-
 
 }
