@@ -25,12 +25,16 @@ class FormularyFragment : Fragment(R.layout.fragment_formulary) {
                     binding.nom.error = getString(R.string.error_nom)
                 } else if (binding.prenom.text!!.isEmpty()) {
                     binding.prenom.error = getString(R.string.error_prenom)
+                } else {
+//                    navigateToResultFragment()
+                    val fragment = ResultFragment.newInstance(binding.nom.text.toString(), binding.prenom.text.toString())
+                    activity.navigateToResult(fragment)
                 }
-//            else {
-////                startActivity(i)
-//            }
             }
+
             val view = binding.root
             return view
         }
   }
+
+
