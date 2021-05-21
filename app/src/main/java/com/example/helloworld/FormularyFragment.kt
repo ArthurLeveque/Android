@@ -33,16 +33,4 @@ class FormularyFragment : Fragment(R.layout.fragment_formulary) {
             val view = binding.root
             return view
         }
-<<<<<<< Updated upstream
-//    }
-=======
-    }: View? {
-        _binding = ResultProfileBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
-    }
-
-
-
->>>>>>> Stashed changes
-}
+  }
