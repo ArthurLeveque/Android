@@ -5,41 +5,22 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.helloworld.databinding.FragmentFormularyBinding
 
+private lateinit var binding: FragmentFormularyBinding
 
 class FormularyFragment : Fragment(R.layout.fragment_formulary) {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(inflater: LayoutInflater,
+                          container: ViewGroup?,
+                          savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-<<<<<<< Updated upstream
 
 
 
-        button.setOnClickListener {
-            val i = Intent(this, ChildActivity::class.java)
-
-            i.putExtra(NOM_KEY, nom.text.toString());
-            i.putExtra(PRENOM_KEY, prenom.text.toString());
-
-            if (nom.text!!.isEmpty()) {
-                nom.error = getString(R.string.error_nom)
-            } else if (prenom.text!!.isEmpty()) {
-                prenom.error = getString(R.string.error_prenom)
-            } else {
-                startActivity(i)
-            }
-        }
-    }
-=======
->>>>>>> Stashed changes
-
-        binding = activityMainBinding.inflate(inflater, container, false)
+        binding = FragmentFormularyBinding.inflate(inflater, container, false)
 
         binding.button.setOnClickListener {
-            val i = Intent(this, ChildActivity::class.java)
-
-            i.putExtra(NOM_KEY, nom.text.toString());
-            i.putExtra(PRENOM_KEY, prenom.text.toString());
 
             if (nom.text!!.isEmpty()) {
                 nom.error = getString(R.string.error_nom)
