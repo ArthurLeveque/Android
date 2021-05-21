@@ -1,11 +1,8 @@
 package com.example.helloworld
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.OneShotPreDrawListener.add
-import androidx.fragment.app.Fragment
+import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import com.example.helloworld.databinding.ActivityMainBinding
 
@@ -30,20 +27,20 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        button.setOnClickListener {
-            val i = Intent(this, ChildActivity::class.java)
-
-            i.putExtra(NOM_KEY, nom.text.toString());
-            i.putExtra(PRENOM_KEY, prenom.text.toString());
-
-            if (nom.text!!.isEmpty()) {
-                nom.error = getString(R.string.error_nom)
-            } else if (prenom.text!!.isEmpty()) {
-                prenom.error = getString(R.string.error_prenom)
-            } else {
-                startActivity(i)
-            }
-        }
+//        button.setOnClickListener {
+//            val i = Intent(this, ChildActivity::class.java)
+//
+//            i.putExtra(NOM_KEY, nom.text.toString());
+//            i.putExtra(PRENOM_KEY, prenom.text.toString());
+//
+//            if (nom.text!!.isEmpty()) {
+//                nom.error = getString(R.string.error_nom)
+//            } else if (prenom.text!!.isEmpty()) {
+//                prenom.error = getString(R.string.error_prenom)
+//            } else {
+//                startActivity(i)
+//            }
+//        }
     }
 
 }
