@@ -1,6 +1,5 @@
 package com.example.helloworld
 
-import android.app.Activity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentActivity
@@ -14,6 +13,8 @@ class MainActivity : AppCompatActivity() {
     companion object {
         const val NOM_KEY: String = "nom_key"
         const val PRENOM_KEY: String = "prenom_key"
+
+        const val DATA_KEY: String = "fsdlkmjsfdmjklfsqdkml";
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,9 +34,9 @@ class MainActivity : AppCompatActivity() {
 
 }
 
-fun FragmentActivity?.navigateToResult() {
+fun FragmentActivity?.navigateToResult(fragment: ResultFragment) {
     this?.supportFragmentManager?.commit {
         setReorderingAllowed(true)
-        add<ResultFragment>(R.id.fragment_container_view)
+        add(R.id.fragment_container_view, fragment)
     }
 }

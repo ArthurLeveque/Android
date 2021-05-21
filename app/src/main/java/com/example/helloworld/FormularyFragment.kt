@@ -1,6 +1,5 @@
 package com.example.helloworld
 
-import android.app.Activity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -28,7 +27,8 @@ class FormularyFragment : Fragment(R.layout.fragment_formulary) {
                     binding.prenom.error = getString(R.string.error_prenom)
                 } else {
 //                    navigateToResultFragment()
-                    activity.navigateToResult()
+                    val fragment = ResultFragment.newInstance(binding.nom.text.toString(), binding.prenom.text.toString())
+                    activity.navigateToResult(fragment)
                 }
             }
 
