@@ -43,4 +43,11 @@ class MainActivity : AppCompatActivity() {
 //        }
     }
 
+    fun navigateToResultFragment() {
+        supportFragmentManager.commit {
+            setReorderingAllowed(true)
+            add<FormularyFragment>(R.id.fragment_container_view)
+        }
+    }
+
 }

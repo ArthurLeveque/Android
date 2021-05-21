@@ -11,22 +11,38 @@ private lateinit var binding: FragmentFormularyBinding
 
 class FormularyFragment : Fragment(R.layout.fragment_formulary) {
 
-    override fun onCreate(inflater: LayoutInflater,
-                          container: ViewGroup?,
-                          savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        override fun onCreateView(
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
+        ): View? {
 
-        binding = FragmentFormularyBinding.inflate(inflater, container, false)
+            binding = FragmentFormularyBinding.inflate(inflater, container, false)
 
-        binding.button.setOnClickListener {
+            binding.button.setOnClickListener {
 
-            if (binding.nom.text!!.isEmpty()) {
-                binding.nom.error = getString(R.string.error_nom)
-            } else if (binding.prenom.text!!.isEmpty()) {
-                binding.prenom.error = getString(R.string.error_prenom)
-            } else {
-                startActivity(i)
+                if (binding.nom.text!!.isEmpty()) {
+                    binding.nom.error = getString(R.string.error_nom)
+                } else if (binding.prenom.text!!.isEmpty()) {
+                    binding.prenom.error = getString(R.string.error_prenom)
+                }
+//            else {
+////                startActivity(i)
+//            }
             }
+            val view = binding.root
+            return view
         }
+<<<<<<< Updated upstream
+//    }
+=======
+    }: View? {
+        _binding = ResultProfileBinding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
     }
+
+
+
+>>>>>>> Stashed changes
 }
