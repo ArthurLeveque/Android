@@ -26,7 +26,6 @@ class FormularyFragment : Fragment(R.layout.fragment_formulary) {
                 } else if (binding.prenom.text!!.isEmpty()) {
                     binding.prenom.error = getString(R.string.error_prenom)
                 } else {
-//                    navigateToResultFragment()
                     val fragment = ResultFragment.newInstance(binding.nom.text.toString(), binding.prenom.text.toString())
                     activity.navigateToResult(fragment)
                 }

@@ -7,10 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.helloworld.MainActivity.Companion.NOM_KEY
 import com.example.helloworld.MainActivity.Companion.PRENOM_KEY
+import com.example.helloworld.databinding.FragmentFormularyBinding
+import com.example.helloworld.databinding.FragmentResultBinding
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
+private lateinit var binding: FragmentResultBinding
 
 class ResultFragment : Fragment() {
     // TODO: Rename and change types of parameters
@@ -30,6 +33,8 @@ class ResultFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        binding = FragmentResultBinding.inflate(inflater, container, false)
+
         return inflater.inflate(R.layout.fragment_result, container, false)
     }
 
