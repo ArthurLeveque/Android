@@ -16,16 +16,14 @@ class FormularyFragment : Fragment(R.layout.fragment_formulary) {
                           savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
-
         binding = FragmentFormularyBinding.inflate(inflater, container, false)
 
         binding.button.setOnClickListener {
 
-            if (nom.text!!.isEmpty()) {
-                nom.error = getString(R.string.error_nom)
-            } else if (prenom.text!!.isEmpty()) {
-                prenom.error = getString(R.string.error_prenom)
+            if (binding.nom.text!!.isEmpty()) {
+                binding.nom.error = getString(R.string.error_nom)
+            } else if (binding.prenom.text!!.isEmpty()) {
+                binding.prenom.error = getString(R.string.error_prenom)
             } else {
                 startActivity(i)
             }
